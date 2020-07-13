@@ -1,5 +1,7 @@
-
-const components = {}
+import modal from "./common/modal.vue"
+const components = {
+    modal
+}
 const install = (Vue = {}) => {
     if (install.installed) return
     Object.keys(components).forEach(component => {
