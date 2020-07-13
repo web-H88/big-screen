@@ -1,6 +1,8 @@
 import modal from "./common/modal.vue"
+import bgAnimation from "./common/bgAnimation.vue"
 const components = {
-    modal
+    modal,
+    bgAnimation
 }
 const install = (Vue = {}) => {
     if (install.installed) return

@@ -1,0 +1,77 @@
+<template>
+  <ul class="slide-box">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</template>
+
+<script>
+  export default {
+    name: "bgAnimation"
+  }
+</script>
+
+<style lang="scss" scoped>
+  .slide-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 134, 179, .5);
+    top: 0;
+    left: 0;
+    z-index: 0;
+    li {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      color: transparent;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      z-index: 0;
+      -webkit-backface-visibility: hidden;
+      animation: imgAnimation 48s linear infinite 0s;
+      &:nth-child(1) {
+        background-image: url("../../assets/img/bg-4.jpg");
+      }
+      &:nth-child(2) {
+        background-image: url("../../assets/img/bg-5.jpg");
+        animation-delay: 12s;
+      }
+      &:nth-child(3) {
+        background-image: url("../../assets/img/bg-2.jpg");
+        animation-delay: 24s;
+      }
+      &:nth-child(4) {
+        background-image: url("../../assets/img/bg-4.jpg");
+        animation-delay: 36s;
+      }
+    }
+  }
+  @keyframes imgAnimation {
+    0% {
+      opacity: 0;
+      -webkit-animation-timing-function: ease-in;
+    }
+    8% {
+      opacity: 1;
+      -webkit-animation-timing-function: ease-in;
+    }
+    17% {
+      opacity: 1;
+      -webkit-animation-timing-function: ease-in;
+    }
+    25% {
+      opacity: 0;
+      -webkit-animation-timing-function: ease-in;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
