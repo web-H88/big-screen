@@ -13,6 +13,11 @@ Vue.use(VueRouter)
     path: "/videoDemo",
     name: "videoDemo",
     component: () => import("@/views/videoDemo.vue")
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: () => import("@/views/Home.vue")
   }
 ]
 
