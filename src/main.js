@@ -10,6 +10,8 @@ import Toast from "./components/common/toast"
 import "videojs-markers"
 //引入样式
 import "videojs-markers/dist/videojs.markers.css"
+import '@/assets/style/base.scss'
+import '@/assets/style/common.scss'
 
 Vue.config.productionTip = false
 Vue.prototype.$Toast = Toast

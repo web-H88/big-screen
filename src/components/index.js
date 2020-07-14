@@ -1,8 +1,10 @@
 import modal from "./common/modal.vue"
 import bgAnimation from "./common/bgAnimation.vue"
+import sinan from "./abilityFn/sinan.vue"
 const components = {
     modal,
-    bgAnimation
+    bgAnimation,
+    sinan
 }
 const install = (Vue = {}) => {
     if (install.installed) return

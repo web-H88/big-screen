@@ -2,6 +2,7 @@
 	<div class="home-container">
 		<div class="wrap" ref="editor">
 			<div class="top"></div>
+      <sinan />
 			<div class="divider"></div>
 		</div>
 	</div>
