@@ -6,26 +6,25 @@
           <h2>大数据可视化平台</h2>
           <div class="item">
             <i class="iconfont icon-user"></i>
-            <input autocomplete="off" type="text" class="input" v-model="userName" placeholder="请输入用户名"/>
+            <input type="text" autocomplete="off" class="input" v-model="userName" placeholder="请输入用户名">
           </div>
           <div class="item">
             <i class="iconfont icon-password"></i>
-            <input autocomplete="off" type="password" class="input" v-model="userPwd" maxlength="20" @keyup.enter="login" placeholder="请输入密码"/>
+            <input type="password" autocomplete="off" class="input" v-model="userPwd" placeholder="请输入密码" @click.enter="login">
           </div>
           <button class="loginBtn" :disabled="isLoginAble" @click.stop="login">立即登录</button>
-          <div class="tip">
-            默认用户名：admin， 默认密码：123456
-          </div>
+          <div class="tip">默认用户名：admin ，默认密码：123456</div>
         </div>
       </div>
     </div>
-    <vue-particles color="#6495ED" :particleOpacity="0.7" :particlesNumber="80" shapeType="circle" :particleSize="4" linesColor="#6495ED" :linesWidth="1" :lineLinked="true" :lineOpacity="0.6" :linesDistance="150" :moveSpeed="3" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push"></vue-particles>
+    <vue-particles  color="#6495ED" :particleOpacity="0.7" :particlesNumber="80" shapeType="circle" :particleSize="4" linesColor="#6495ED" :linesWidth="1" :lineLinked="true" :lineOpacity="0.6" :linesDistance="150" :moveSpeed="3" :hoverEffect="true" hoverMode="grab" :clickEffect="true" clickMode="push"></vue-particles>
     <bgAnimation />
-    <modal title="提示" :content="modalContent" :visible.sync="visible" @confim="confim" />
+    <modal title="提示" :content="modalContent" :visible.sync="visible" @confirm="confirm" />
   </div>
 </template>
 
 <script>
+
   export default {
     data () {
       return {
@@ -41,7 +40,7 @@
       }
     },
     methods: {
-      confim (data) {
+      confirm (data) {
         console.log(data)
       },
       login () {
@@ -60,6 +59,8 @@
 
 <style lang="scss" scoped>
   .login-container {
+    width: 100%;
+    height: 100%;
     .layer {
       position: absolute;
       height: 100%;
@@ -81,12 +82,20 @@
       top: 50%;
       left: 50%;
       z-index: 1001;
+      -webkit-transform: translate3d(-50%, -50%, 0);
       transform: translate3d(-50%, -50%, 0);
-      animation: clond 2s 3s ease-in infinite alternate;
+
+      -ms-animation: cloud 2s 3s ease-in infinite alternate;
+      -moz-animation: cloud 2s 3s ease-in infinite alternate;
+      -webkit-animation: cloud 2s 3s ease-in infinite alternate;
+      -o-animation: cloud 2s 3s ease-in infinite alternate;
+      -webkit-animation: cloud 2s 3s ease-in infinite alternate;
+      animation: cloud 2s 3s ease-in infinite alternate;
+
       .form {
         width: 460px;
         height: auto;
-        background-color: rgba(36, 36, 85, .5);
+        background: rgba(36, 36, 85, .5);
         margin: 0 auto;
         padding: 35px 30px 25px;
         box-shadow: 0 0 25px rgba(255, 255, 255, .5);
@@ -131,7 +140,7 @@
           &:hover {
             color: #fff;
             background: #0090ff;
-    			  border-color: #0090ff;
+            border-color: #0090ff;
           }
         }
         .tip {
@@ -139,6 +148,91 @@
           padding-top: 20px;
         }
       }
+    }
+  }
+
+  input::-webkit-input-placeholder {
+    color: #d3d7f7;
+  }
+  input::-moz-placeholder {
+    color: #d3d7f7;
+  }
+  input:-moz-placeholder {
+    color: #d3d7f7;
+  }
+  input:-ms-input-placeholder { 
+    color: #d3d7f7;
+  }
+
+
+  @-ms-keyframes cloud{
+    0%{
+      -ms-transform: translate(-50%, -50%);
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      opacity: 1;
+    }
+    100%{
+      -ms-transform: translate(-50%, -40%);
+    }
+  }
+  @-moz-keyframes cloud{
+    0%{
+      -moz-transform: translate(-50%, -50%);
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      opacity: 1;
+    }
+    100%{
+      -moz-transform: translate(-50%, -40%);
+    }
+  }
+  @-o-keyframes cloud{
+    0%{
+      -o-transform: translate(-50%, -50%);
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      opacity: 1;
+    }
+    100%{
+      -o-transform: translate(-50%, -40%);
+    }
+  }
+  @-webkit-keyframes cloud{
+    0%{
+      -webkit-transform: translate(-50%, -50%);
+    }
+    40%{
+       opacity: 1;
+    }
+    60%{
+      opacity: 1;
+    }
+    100%{
+      -webkit-transform: translate(-50%, -40%);
+    }
+  }
+  @keyframes cloud{
+    0%{
+      transform: translate(-50%, -50%);
+    }
+    40%{
+      opacity: 1;
+    }
+    60%{
+      opacity: 1;
+    }
+    100%{
+      transform: translate(-50%, -40%);
     }
   }
 </style>

@@ -13,7 +13,7 @@
           <button type="button" class="btn-close" @click="close" v-if="showCancle">
             {{ cancleText ? cancleText : '取消' }}
           </button>
-          <button type="button" class="btn-confirm" @click="confim">
+          <button type="button" class="btn-confirm" @click="confirm">
             {{ confirmText ? confirmText : '确定' }}
           </button>
         </div>
@@ -60,9 +60,9 @@
       close () {
         this.$emit("update:visible", false)
       },
-      confim () {
+      confirm () {
         this.close()
-        this.$emit("confim")
+        this.$emit("confirm")
       }
     }
   }
